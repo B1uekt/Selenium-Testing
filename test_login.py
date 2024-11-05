@@ -169,4 +169,4 @@ def test_login_with_empty_password(driver):
     error_message = error_message_element.text
     time.sleep(3)
     # so sánh với nội dung của message đã lấy ra
-    assert "Success: " in error_message
+    assert "Warning: No match for E-Mail Address and/or Password." in error_message

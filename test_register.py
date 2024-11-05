@@ -21,7 +21,7 @@ def test_register_with_valid_data(driver):
     # truyền vào firstname, lastname, email và password hợp lệ
     driver.find_element(By.ID, "input-firstname").send_keys("Zoe")
     driver.find_element(By.ID, "input-lastname").send_keys("Nguyen")
-    driver.find_element(By.ID, "input-email").send_keys("testZoe12@gmail.com")
+    driver.find_element(By.ID, "input-email").send_keys("testZoeadmin1abc@gmail.com")
     driver.find_element(By.ID, "input-password").send_keys("123456")
 
     legend_element = driver.find_element(By.XPATH, "//legend[contains(text(), 'Newsletter')]")
@@ -42,7 +42,7 @@ def test_register_with_specical_name(driver):
     # truyền vào firstname, lastname với kí tự đặc biệt
     driver.find_element(By.ID, "input-firstname").send_keys("@@@@")
     driver.find_element(By.ID, "input-lastname").send_keys("#####")
-    driver.find_element(By.ID, "input-email").send_keys("testZoe1223@gmail.com")
+    driver.find_element(By.ID, "input-email").send_keys("testZoe132342aasdd@gmail.com")
     driver.find_element(By.ID, "input-password").send_keys("123456")
 
     legend_element = driver.find_element(By.XPATH, "//legend[contains(text(), 'Newsletter')]")
@@ -137,7 +137,7 @@ def test_register_with_exact_32_characters(driver):
     # truyền vào firstname, lastname với 32 ký tự
     driver.find_element(By.ID, "input-firstname").send_keys(long_firstname)
     driver.find_element(By.ID, "input-lastname").send_keys(long_lastname)
-    driver.find_element(By.ID, "input-email").send_keys("testZoe122223@gmail.com")
+    driver.find_element(By.ID, "input-email").send_keys("testZoe123abcdef12344@gmail.com")
     driver.find_element(By.ID, "input-password").send_keys("123456")
 
     legend_element = driver.find_element(By.XPATH, "//legend[contains(text(), 'Newsletter')]")
@@ -210,7 +210,7 @@ def test_register_with_long_password(driver):
     # truyền vào password có 25 kí tự
     driver.find_element(By.ID, "input-firstname").send_keys("Zoe")
     driver.find_element(By.ID, "input-lastname").send_keys("Nguyen")
-    driver.find_element(By.ID, "input-email").send_keys("testZoe12333@gmail.com")
+    driver.find_element(By.ID, "input-email").send_keys("testZoe1245bca23355@gmail.com")
     driver.find_element(By.ID, "input-password").send_keys(long_password)
 
     legend_element = driver.find_element(By.XPATH, "//legend[contains(text(), 'Newsletter')]")
@@ -228,11 +228,11 @@ def test_register_with_long_password(driver):
 def test_register_with_password_exact_4_characters(driver):
     driver.get("https://demo.opencart.com/en-gb?route=account/register")
     time.sleep(5)
-    short_password = "1234"  # Mật khẩu chỉ 3 ký tự
+    short_password = "1234"  # Mật khẩu chỉ 4 ký tự
     # truyền vào firstname, lastname, email và password
     driver.find_element(By.ID, "input-firstname").send_keys("Zoe")
     driver.find_element(By.ID, "input-lastname").send_keys("Nguyen")
-    driver.find_element(By.ID, "input-email").send_keys("testZoeabc@gmail.com")
+    driver.find_element(By.ID, "input-email").send_keys("testZoeabcc123iiuh@gmail.com")
     driver.find_element(By.ID, "input-password").send_keys(short_password)
 
     legend_element = driver.find_element(By.XPATH, "//legend[contains(text(), 'Newsletter')]")

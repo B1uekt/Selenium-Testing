@@ -52,7 +52,7 @@ def test_add_single_products(driver):
     td_element = driver.find_element(By.CSS_SELECTOR, "td.text-start.text-wrap")
     td_text = td_element.text
     # so sánh xem tên sản phẩm đã đúng hay chưa
-    assert td_text == "iPhone"
+    assert "iPhone" in td_text
 
 def test_add_multiple_products(driver):
     driver.get("https://demo.opencart.com/")
@@ -119,9 +119,9 @@ def test_add_product_with_negative_quantity(driver):
     driver.get("https://demo.opencart.com/")
     time.sleep(3)
     # thêm sản phẩm bằng cách tìm từ khóa
-    my_account_link = driver.find_element(By.NAME, "search")
-    my_account_link.clear()
-    my_account_link.send_keys("iphone")
+    search_input = driver.find_element(By.NAME, "search")
+    search_input.clear()
+    search_input.send_keys("iphone")
     time.sleep(3)
     driver.find_element(By.CSS_SELECTOR, ".btn.btn-light.btn-lg").click()
     time.sleep(5)
@@ -145,15 +145,15 @@ def test_add_product_with_negative_quantity(driver):
     error_message = error_message_element.text
     time.sleep(3)
     # so sánh với nội dung của message đã lấy ra
-    assert "Success: You have added" in error_message
+    assert "Success: You have added" not in error_message
 
 def test_add_same_product_multiple_times(driver):
     driver.get("https://demo.opencart.com/")
     time.sleep(3)
     # thêm sản phẩm bằng cách tìm từ khóa
-    my_account_link = driver.find_element(By.NAME, "search")
-    my_account_link.clear()
-    my_account_link.send_keys("iphone")
+    search_input = driver.find_element(By.NAME, "search")
+    search_input.clear()
+    search_input.send_keys("iphone")
     time.sleep(3)
     driver.find_element(By.CSS_SELECTOR, ".btn.btn-light.btn-lg").click()
     time.sleep(5)

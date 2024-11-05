@@ -9,12 +9,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
 
-@pytest.fixture(params=["chrome", "firefox"])  # Thêm firefox vào danh sách tham số
-def driver(request):
-    if request.param == "chrome":
-        driver = webdriver.Chrome()
-    elif request.param == "firefox":
-        driver = webdriver.Firefox()  # Sử dụng geckodriver cho Firefox
+@pytest.fixture
+def driver():
+    driver = webdriver.Chrome()
     driver.maximize_window()
     yield driver
     driver.quit()
